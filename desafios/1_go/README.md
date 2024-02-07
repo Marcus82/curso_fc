@@ -1,11 +1,16 @@
-DESAFIO GO
+# Desafio GO
 
-1) publicar uma imagem no docker hub. Quando executarmos: docker run <seu-user>/fullcycle
-Temos que ter o seguinte resultado: Full Cycle Rocks!!
+#### 1.0 - Publicar uma imagem no docker hub. 
 
-- docker run mvpsoares/go-app:latest
+- Quando executarmos: docker run <seu-user>/fullcycle
+  Temos que ter o seguinte resultado: Full Cycle Rocks!!
 
-2) A imagem de nosso projeto Go precisa ter menos de 2MB =)
+  ```
+  docker run mvpsoares/go-app:latest
+  ```
 
-3) LINK DA IMAGEM DOCKER HUB: 
-https://hub.docker.com/repository/docker/mvpsoares/go-app/general
+#### 2.0 A imagem de nosso projeto Go precisa ter menos de 2MB
+
+#### 3.0 Link da imagem no Dcker Hub
+
+  https://hub.docker.com/repository/docker/mvpsoares/go-app/general
