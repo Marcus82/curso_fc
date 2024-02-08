@@ -6,17 +6,13 @@ WORKDIR /app
 COPY go.mod .
 COPY main.go .
 
-RUN go build -ldflags "-s -w" go-app .
+RUN go build -ldflags="-s -w" -o go-app .
 
 # Final Stage 
-FROM alpine:latest
+FROM hello-world
 
 WORKDIR /usr/src/app/
 
 COPY --from=build-stage /app/go-app .
-
-# Remover pacotes desnecessários
-# Limpar o cache
-RUN rm -rf /var/cache/apk/*
 
 ENTRYPOINT [ "./go-app" ]
