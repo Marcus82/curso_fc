@@ -1,12 +1,17 @@
-FROM node:15
+FROM node:18
 
 WORKDIR /usr/src/app
 
+COPY package.json ./
+COPY package-lock.json ./
+COPY index.js ./
+
+RUN npm install --ignore-scripts
+
 ENV DOCKERIZE_VERSION v0.7.0
 
-# comando abaixo não funcionou
-# RUN apt-get update && 
-RUN apt-get install -y wget \
+RUN apt-get update \
+    && apt-get install -y wget \
     && wget -O - https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz | tar xzf - -C /usr/local/bin \
     && apt-get autoremove -yqq --purge wget && rm -rf /var/lib/apt/lists/*
 

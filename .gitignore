@@ -1,4 +1,12 @@
 ### AL ###
+
+node_modules/
+dist/*
+doc/
+docs/
+mysql/
+
+
 #Template for AL projects for Dynamics 365 Business Central
 #launch.json folder
 .vscode/
