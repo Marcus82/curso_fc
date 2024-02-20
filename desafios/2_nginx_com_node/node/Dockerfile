@@ -2,11 +2,15 @@ FROM node:18
 
 WORKDIR /usr/src/app
 
-COPY package.json ./
-COPY package-lock.json ./
-COPY index.js ./
+# COPY package.json ./
+# COPY package-lock.json ./
+# COPY index.js ./
+
+COPY package*.json ./
 
 RUN npm install --ignore-scripts
+
+COPY . .
 
 ENV DOCKERIZE_VERSION v0.7.0
 
