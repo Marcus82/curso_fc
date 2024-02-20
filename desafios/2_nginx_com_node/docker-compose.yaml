@@ -7,8 +7,7 @@ services:
       context: node
     container_name: app
     entrypoint: dockerize -wait tcp://db:3306 -timeout 20s docker-entrypoint.sh
-    # command: node index.js
-    command: ["sh", "-c", "npm install --ignore-scripts && node index.js"]
+    command: ["sh","start.sh"]
     networks:
       - node-network
     volumes:
